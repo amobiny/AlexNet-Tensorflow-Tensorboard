@@ -8,9 +8,25 @@ You can load other inputs by modifying load_input.py file. You may also simply c
 
 
 ## Training 
+
 ```
-python MainCode.py 
+python train.py --problem=mnist --save_path=./mnist
 ```
+
+Command-line flags:
+
+* `save_path`: If present, the optimizer will be saved to the specified path
+    every time the evaluation performance is improved.
+* `num_epochs`: Number of training epochs.
+* `log_period`: Epochs before mean performance and time is reported.
+* `evaluation_period`: Epochs before the optimizer is evaluated.
+* `evaluation_epochs`: Number of evaluation epochs.
+* `problem`: Problem to train on. See [Problems](#problems) section below.
+* `num_steps`: Number of optimization steps.
+* `unroll_length`: Number of unroll steps for the optimizer.
+* `learning_rate`: Learning rate.
+* `second_derivatives`: If `true`, the optimizer will try to compute second
+    derivatives through the loss function specified by the problem.
 
 ## Reference paper: 
 http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks
